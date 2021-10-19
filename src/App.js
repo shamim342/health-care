@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter , Switch, Route } from 'react-router-dom';
+import Home from './page/home/Home';
+import Header from './components/header/Header';
+import Login from './page/login/Login';
+import About from './page/about/About';
+import NotFound from './page/notFound/NotFound';
+import Footer from './page/footer/Footer'
+import ServiceDetails from './page/home/ServiceDetails';
+import AuthProvider from './context/AuthProvider';
+import ItemDetails from './page/ItemDetails';
+import PrivateRoute from './privateRoute/PrivateRoute';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+      <BrowserRouter>
+      <Header></Header>
+        <Switch>
+          <Route exact path="/">
+              <Home></Home>
+          </Route>
+          <Route path="/home">
+              <Home></Home>
+          </Route>
+          <Route  path="/login">
+              <Login></Login>
+          </Route>
+          <Route  path="/about">
+              <About></About>
+          </Route>
+          <PrivateRoute  path="/itemDetails">
+              <ItemDetails></ItemDetails>
+          </PrivateRoute>
+          <Route  path="/serviceDetails/:serviceId">
+              <ServiceDetails></ServiceDetails>
+          </Route>
+          <Route  path="*">
+              <NotFound></NotFound>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+     </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

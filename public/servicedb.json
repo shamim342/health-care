@@ -1,0 +1,31 @@
+[{
+        "id": 1,
+        "name": "Echo Test",
+        "img": "https://healingtouchdiag.com/wp-content/uploads/2020/01/2-d-echo-test.jpg",
+        "details": "An echocardiogram (echo) is a graphic outline of the heart's movement. During an echo test, ultrasound (high-frequency sound waves) from a hand-held wand placed on your chest provides pictures of the heart's valves and chambers and helps the sonographer evaluate the pumping action of the heart. Echo is often combined with Doppler ultrasound and color Doppler to evaluate blood flow across the heart's valves."
+    },
+    {
+        "id": 2,
+        "name": "ECG Test",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzq2WVD2FcwVNsKdx8xDeZsbcPbwfbdIpzVA&usqp=CAU",
+        "details": "The electrocardiogram (ECG) is one of the simplest and oldest cardiac investigations available, yet it can provide a wealth of useful information and remains an essential part of the assessment of cardiac patients."
+    },
+    {
+        "id": 3,
+        "name": "Urine Test",
+        "img": "https://images.medicinenet.com/images/urinalysis-2.jpg",
+        "details": "A urinalysis test is performed by collecting a urine sample from the patient in a specimen cup. Usually only small amounts (30-60 mL) may be required for urinalysis testing. The sample can be either analyzed in the medical clinic or sent to a laboratory to perform the tests. Urinalysis is abbreviated UA."
+    },
+    {
+        "id": 4,
+        "name": "INR Test",
+        "img": "https://www.stoptheclot.org/wp-content/uploads/2016/11/pt-inr-test.jpg",
+        "details": "An INR test measures the time for the blood to clot. It is also known as prothrombin time, or PT. It is used to monitor blood-thinning medicines, which are also known as anticoagulants. The INR, or international normalised ratio, can also be used to check if you have a blood clotting problem."
+    },
+    {
+        "id": 5,
+        "name": "Toxicology Test",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVtPWnE3YOTiUpo8xmlrhB6rX3o7jAwaYwg&usqp=CAU",
+        "details": "A toxicology test (tox screen) checks for drugs or other chemicals in your blood, urine, or saliva. Drugs can be swallowed, inhaled, injected, or absorbed through the skin or a mucous membrane. In rare cases, a tox screen may check your stomach contents or sweat."
+    }
+]
