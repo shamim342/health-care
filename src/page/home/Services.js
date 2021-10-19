@@ -12,7 +12,7 @@ const Services = (props) => {
         <div>
              <Col>
       <Card>
-        <Card.Img variant="top" className="img-fluid" src={img} />
+        <Card.Img variant="top" style={{height:"300px"}} src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

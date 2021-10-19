@@ -7,13 +7,10 @@ import useFetch from '../../hooks/useFetch';
 const ServiceDetails = () => {
     const {serviceId} = useParams();
     const [singleItem , setSingleItem] = useState([]);
-    const history= useHistory();
 
     const [services] = useFetch();
 
-    const handleTestService=()=>{
-      history.push('/itemDetails')
-    }
+    
 
     useEffect(()=>{
        const findItem= services.find(serviceDetails =>serviceDetails.id==serviceId)
@@ -22,7 +19,7 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className="container">
+        <div className="container w-75 mx-auto mt-3">
             <Row xs={1} md={1} className="g-4">
     <Col>
       <Card>
@@ -33,9 +30,7 @@ const ServiceDetails = () => {
               {singleItem?.details}
           </Card.Text>
            <Link to ="/itemDetails">
-           <Button variant="outline-danger">
-             test
-           </Button>
+           
             </Link>
 
         </Card.Body>

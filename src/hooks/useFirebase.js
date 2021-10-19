@@ -1,10 +1,13 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider ,onAuthStateChanged, signOut} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider ,onAuthStateChanged, signOut,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initialization from "../firebase/firebase.init";
 
 initialization()
 const useFirebase =()=>{
     const [user , setUser] = useState({});
+    const [error , setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
@@ -12,27 +15,58 @@ const useFirebase =()=>{
     const signInGoogle =()=>{
         return signInWithPopup(auth, googleProvider)
     }
+
    
 
     const logout =()=>{
         signOut(auth).then(() => {
             setUser('');
-          }).catch(error => {
-          });
+            
+          }).finally(() => setIsLoading(false));
           
+    }
+
+    const newUser =(email,password)=>{
+        createUserWithEmailAndPassword(auth, email, password)
+  .then(result=> {
+    
+    const user = result.user;
+    console.log(user);
+
+  })
+  .catch(error => {
+    setError(error.message);
+  });
+    }
+
+    const loginUser=(email,password)=>{
+        signInWithEmailAndPassword(auth ,email, password)
+        .then(result => {
+            // Signed in 
+            const user = result.user;
+            console.log(user);
+            // ...
+          })
+          .catch(error=> {
+            setError(error.message)
+        });
+        
     }
 
 
     useEffect(()=>{
-        onAuthStateChanged(auth, user => {
+       const unsubscribe= onAuthStateChanged(auth, user => {
             if (user) {
              setUser(user)
             } else {
-              
+              setUser({})
             }
+            setIsLoading(false)
+
           });
+          return ()=> unsubscribe;
         
     },[])
-    return {user , signInGoogle , logout}
+    return {user , signInGoogle , logout , isLoading,setIsLoading,newUser,loginUser }
 }
 export default useFirebase;

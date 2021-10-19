@@ -4,7 +4,6 @@ import Services from './Services';
 
 const Servicepart = () => {
     const [services] = useFetch();   
-    console.log(services);
     return (
         <div className="container">
             <h3 className="text-center my-3">Our Services</h3>

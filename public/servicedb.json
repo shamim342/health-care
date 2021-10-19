@@ -27,5 +27,11 @@
         "name": "Toxicology Test",
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVtPWnE3YOTiUpo8xmlrhB6rX3o7jAwaYwg&usqp=CAU",
         "details": "A toxicology test (tox screen) checks for drugs or other chemicals in your blood, urine, or saliva. Drugs can be swallowed, inhaled, injected, or absorbed through the skin or a mucous membrane. In rare cases, a tox screen may check your stomach contents or sweat."
+    },
+    {
+        "id": 6,
+        "name": "MRI Test",
+        "img": "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/146/146309/mri-scan.jpg?w=1155&h=1533",
+        "details": "Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. An MRI scanner is a large tube that contains powerful magnets."
     }
 ]
