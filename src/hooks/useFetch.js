@@ -7,6 +7,9 @@ const useFetch =()=>{
         .then(res => res.json())
         .then(data => setServices(data))
     },[])
+
+   
+
     return [services]
 }
 export default useFetch;

@@ -9,20 +9,20 @@ const Target = () => {
   <Accordion.Item eventKey="0">
     <Accordion.Header>Help you keep fit</Accordion.Header>
     <Accordion.Body>
-        We make our all courese specially . Our courses definitely improve and increase your Knowledge area . This course gives you easy access to the invaluable learning techniques used by experts in art, music, literature, math, science, sports, and many other disciplines.
+    annual physical check up to make sure everything is as it should be. There is no harm getting regular check ups as it's good for your own body. Do breast or testicular self-exams and get suspicious moles checked out. Getting exams regularly benefits you because if and when something is abnormal, you will get to know about it timely and can consult with your doctor.
     </Accordion.Body>
   </Accordion.Item>
   <Accordion.Item eventKey="1">
     <Accordion.Header>25% free</Accordion.Header>
     <Accordion.Body>
      
-    This course gives you easy access to the invaluable learning techniques used by experts in art, music, literature, math, science, sports, and many other disciplines. We’ll learn about how the brain uses two very different learning modes and how it encapsulates (“chunks”) information. We’ll also cover illusions of learning, memory techniques, dealing with procrastination, and best practices shown by research to be most effective in helping you master tough subjects. 
+    In covid situation , we are give you 25-50% off!!! all health test .  
     </Accordion.Body>
   </Accordion.Item>
   <Accordion.Item eventKey="2">
-    <Accordion.Header>Prepared for Jobs Exam</Accordion.Header>
+    <Accordion.Header> detace diseases</Accordion.Header>
     <Accordion.Body>
-    This course gives you easy access to the invaluable learning techniques used by experts in art, music, literature, math, science, sports, and many other disciplines. We’ll learn about how the brain uses two very different learning modes and how it encapsulates (“chunks”) information. We’ll also cover illusions of learning, memory techniques, dealing with procrastination, and best practices shown by research to be most effective in helping you master tough subjects
+      We are use all moden technologies mechine . so we can detace any harmful disease very early.
     </Accordion.Body>
   </Accordion.Item>
 </Accordion>

@@ -12,15 +12,15 @@ const Contact = () => {
                 <h2>Contact us</h2>
                 <div>
                 <i className="fas fa-envelope-open-text fa-2x "></i>
-                <p> Email : learn-more@email.com</p>
+                <p> Email : life-lab@email.com</p>
                 </div>
                 <div>
                 <i className="fab fa-twitter fa-2x"></i>
-                <p> Twitter : @learn-more</p>
+                <p> Twitter : @life-lab</p>
                 </div>
                 <div>
                 <i className="fab fa-linkedin fa-2x"></i>
-                <p> Linkedin: learn-more</p>
+                <p> Linkedin: life-lab</p>
                 </div>
                 <div>
                 <i className="fas fa-phone-volume fa-2x"></i>

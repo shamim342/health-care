@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { useHistory, useParams } from 'react-router';
+import { Card, Col, Row } from 'react-bootstrap';
+import {  useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 
@@ -23,13 +23,13 @@ const ServiceDetails = () => {
             <Row xs={1} md={1} className="g-4">
     <Col>
       <Card>
-        <Card.Img variant="top" src={singleItem?.img} />
+        <Card.Img variant="top"  src={singleItem?.img} />
         <Card.Body>
-          <Card.Title>{singleItem?.name}</Card.Title>
-          <Card.Text>
+          <Card.Title className="text-danger fw-bold">{singleItem?.name}</Card.Title>
+          <Card.Text >
               {singleItem?.details}
           </Card.Text>
-           <Link to ="/itemDetails">
+           <Link to ="/applytest">
            
             </Link>
 
@@ -42,3 +42,4 @@ const ServiceDetails = () => {
 };
 
 export default ServiceDetails;
+

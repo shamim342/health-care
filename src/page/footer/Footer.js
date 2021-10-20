@@ -3,9 +3,10 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <div className=" row text-white bg-dark mt-3 p-5">
+        <div className=" text-white bg-dark mt-3 p-5">
             
-                <div className="col-12 col-md-6">
+               <div className="row">
+               <div className="col-12 col-md-6">
                     <p className="fs-3 mb-3"><span className="text-danger fw-bold">Life</span> lab+</p>
                     <p> WE CARE YOUR HEALTH AND CHECKUP WITH BEST Technology Popular Diagnostic Centre Ltd. has a collection of the most advanced medical technologies  
 
@@ -17,7 +18,7 @@ const Footer = () => {
                     <i className="fab fa-twitter fa-2x mx-3"></i>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 text-left">
+                <div className="col-12 col-md-6 text-left ">
                     <p className="fs-4 mb-3"> Our Services help you</p>
                     <p className="">
                     <i className="fas fa-medal me-2"></i>  
@@ -30,7 +31,8 @@ const Footer = () => {
                         Detacet desises</p>
                     
                 </div>
-                 <div>
+               </div>
+                 <div className="mt-3">
                     <p>Copy rights@2021 - lifeLab diagonestic center</p>
             </div>
            

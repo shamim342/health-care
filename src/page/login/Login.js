@@ -4,10 +4,10 @@ import useAuth from '../../hooks/useAuth';
  
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
-// import './App.css';
 import React from 'react';
 import initialization from "../../firebase/firebase.init";
 import { useHistory, useLocation } from 'react-router';
+import "./login.css"
 
 
 initialization();
@@ -32,10 +32,11 @@ const Login = () => {
    
            history.push(location.state?.from ||"/home"); 
           })
-          .finally(() => setIsLoading(false));
-          // .catch(error=>{
-          //   setError('can not Do Now . try again later', error.message)
-          // })
+          .finally(() =>{setIsLoading(false)
+            refreshPage();
+          }
+          )
+         
     }
   
 
@@ -69,20 +70,20 @@ const Login = () => {
 
     if (isLogin) {
       processLogin(email, password);
+
     }
     else {
       registerNewUser(email, password);
     }
     
-    refreshPage();
     
   }
 
   const refreshPage = ()=>{
+    history.push(location.state?.from || "/home"); 
+
     window.location.reload();
-   
-      history.push(location.state?.from ||"/home"); 
-  
+          
  }
 
 
@@ -92,6 +93,8 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setError('');
+      refreshPage();
+
       })
       .catch(error => {
         setError('you are not Registred. please Registration!!');
@@ -106,6 +109,8 @@ const Login = () => {
         setError('');
         
         setUserName();
+      refreshPage();
+
       })
       .catch(error => {
         setError('you are allready Registred. please login!!');
@@ -122,49 +127,61 @@ const Login = () => {
   
 
   return (
-    <div className="mx-5 w-50 mx-auto">
-      <form onSubmit={handleRegistration}>
-        <h3 className="text-primary">Please {isLogin ? 'Login' : 'Register'}</h3>
+    <div className="mx-5 w-lg-50 w-75 mx-auto">
+
+      <div className="custom-form ">
+      <form onSubmit={handleRegistration} className='p-3 '>
+        <h3 className="text-secondary">Please {isLogin ? 'Login' : 'Register'}</h3>
         {!isLogin && <div className="row mb-3">
-          <label htmlFor="inputName" className="col-sm-2 col-form-label">Name</label>
+          <label htmlFor="inputName" className="col-sm-2 col-form-label">
+          <i className="fas fa-file-signature fa-2x"></i>
+            </label>
           <div className="col-sm-10">
             <input type="text" onBlur={handleNameChange} className="form-control" id="inputName" placeholder="Your Name" />
           </div>
         </div>}
         <div className="row mb-3">
-          <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+          <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">
+          <i className="fas fa-envelope fa-2x"></i>
+            </label>
           <div className="col-sm-10">
-            <input onBlur={handleEmailChange} type="email" className="form-control" id="inputEmail3" required />
+            <input onBlur={handleEmailChange} type="email" className="form-control" id="inputEmail3" placeholder="Inter Your Email" required />
           </div>
         </div>
         <div className="row mb-3">
-          <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+          <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">
+          <i className="fas fa-unlock-alt fa-2x"></i>
+            </label>
           <div className="col-sm-10">
-            <input type="password" onBlur={handlePasswordChange} className="form-control" id="inputPassword3" required />
+            <input type="password" onBlur={handlePasswordChange} className="form-control" id="inputPassword3" placeholder="Inter Your Password" required />
           </div>
         </div>
         <div className="row mb-3">
           <div className="col-sm-10 offset-sm-2">
             <div>
 
-              <input  className="form-check-input" onChange={toggleLogin} type="checkbox" id="gridCheck1" />
+             
               <label className="form-check-label" htmlFor="gridCheck1">
                 {
                   isLogin?'If you not registerd?':'Already you Registered?'
                 }
+                 <input  className="form-check-input" onChange={toggleLogin} type="checkbox" id="gridCheck1" />
                 
               </label>
             </div>
           </div>
         </div>
-        <div className="row mb-3 text-danger">{error}</div>
-        <button type="submit" className="btn btn-primary">
+        <div className=" text-danger text-center fw-bold my-2">{error}</div>
+        <button type="submit" className="btn btn-info">
           {isLogin ? 'Login' : 'Register'}
         </button>
 
       </form>
+      </div>
+     
+      <p className="mt-3 text-danger fw-bold">Or you can Register with : </p>
       <div className="m-3">
-      <button className="bg-info" onClick={handleGoogle}>  <i class="fab fa-google-plus fa-2x"></i>Google Sign In</button>
+      <button className="bg-info" onClick={handleGoogle}>  <i className="fab fa-google-plus fa-2x"></i>Google Sign In</button>
       </div>
       
     </div>

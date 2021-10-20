@@ -8,8 +8,8 @@ import NotFound from './page/notFound/NotFound';
 import Footer from './page/footer/Footer'
 import ServiceDetails from './page/home/ServiceDetails';
 import AuthProvider from './context/AuthProvider';
-import ItemDetails from './page/ItemDetails';
 import PrivateRoute from './privateRoute/PrivateRoute';
+import Blogs from './page/blogs/Blogs';
 
 
 function App() {
@@ -31,9 +31,12 @@ function App() {
           <Route  path="/about">
               <About></About>
           </Route>
-          <PrivateRoute  path="/itemDetails">
+          <Route  path="/blogs">
+              <Blogs></Blogs>
+          </Route>
+          {/* <PrivateRoute  path="/itemDetails">
               <ItemDetails></ItemDetails>
-          </PrivateRoute>
+          </PrivateRoute> */}
           <PrivateRoute  path="/serviceDetails/:serviceId">
               <ServiceDetails></ServiceDetails>
           </PrivateRoute>
